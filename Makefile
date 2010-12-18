@@ -1,3 +1,20 @@
+/* Copyright 2010 Alex Vedunov (vedunov@bk.ru) */
+
+/* HelloARM Makefile */
+
+/*
+ * This file is part of HelloARM.
+ * HelloARM is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation version 3 of the License
+ * HelloARM is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ * along with HelloARM.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 CROSS_PATH=/home/alex/sam/arm-2007q1/bin
 CROSS_PREFIX=arm-none-linux-gnueabi-
 CROSS_ENV=$(CROSS_PATH)/$(CROSS_PREFIX)
@@ -11,6 +28,7 @@ OBJDUMP=$(CROSS_ENV)objdump
 LDFLAGS=-nostdlib -nostartfile -Ttext 21D00000
 CPPFLAGS+=-I../include
 
+APPDIR=apps
 IMG=hello.bin
 IMG_ELF=hello.elf
 OBJS=int_vectors.o hello_main.o
