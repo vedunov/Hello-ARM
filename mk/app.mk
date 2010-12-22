@@ -10,7 +10,6 @@ LDFLAGS=-nostdlib -nostartfile -Ttext 21D00000
 
 app: $(APPOBJS)
 image: $(APPOBJS) $(EXCVECOBJ)
-	@echo I am in `pwd`
 	$(LD) $(LDFLAGS) $(EXCVECOBJ) $(APPOBJS) -o $(IMAGE)
 	cp $(IMAGE) $(IMAGE_ELF)
 	$(OBJCOPY) -O binary $(IMAGE)
