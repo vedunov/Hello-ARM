@@ -10,7 +10,7 @@ VPATH+=../lib
 .PHONY: apps, exc_vec
 
 all: exc_vec app image
-app image app_clean test:
+app image app_clean:
 	@make "$@" -C $(APPDIR)
 exc_vec exc_vec_clean:
 	@make "$@" -C $(EXCVECDIR)
