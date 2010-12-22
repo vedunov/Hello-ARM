@@ -7,10 +7,8 @@ IMG_ELF=hello.elf
 OBJS=int_vectors.o hello_main.o
 VPATH+=../lib
 
-.PHONY: apps, exc_vec
-
 all: exc_vec app image
-app image app_clean:
+app app_clean image image_clean:
 	@make "$@" -C $(APPDIR)
 exc_vec exc_vec_clean:
 	@make "$@" -C $(EXCVECDIR)
