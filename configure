@@ -1,0 +1,11 @@
+#!/bin/sh
+
+DEFS=mk/defs.mk
+DEFSIN=mk/defs_in.mk
+
+echo "HELLOBASEDIR=`pwd`" > $DEFS
+echo "APPDIR=\$(HELLOBASEDIR)/apps" >> $DEFS
+echo "EXCVECDIR=\$(HELLOBASEDIR)/exc_vec" >> $DEFS
+echo "MAKEDIR=\$(HELLOBASEDIR)/mk" >> $DEFS
+echo >> $DEFS
+cat $DEFSIN >> $DEFS
