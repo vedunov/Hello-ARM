@@ -12,17 +12,9 @@ app app_clean image image_clean:
 	@make "$@" -C $(APPDIR)
 exc_vec exc_vec_clean:
 	@make "$@" -C $(EXCVECDIR)
-all: $(OBJS)
-	$(LD) $(LDFLAGS) $(OBJS) -o $(IMG)
-	cp $(IMG) $(IMG_ELF)
-	$(OBJCOPY) -O binary $(IMG)
-objdump:
-	$(OBJDUMP) -d debug.o
 
 debug.o:
 	cp ../board/at91sam9260ek/dataflash/debug.o .
-int_vectors.o:	int_vectors.s
-hello_main.o: hello_main.s
 
 dasm: $(IMG)
 	$(OBJDUMP) -d $(IMG) -m arm
