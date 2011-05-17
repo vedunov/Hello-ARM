@@ -10,6 +10,7 @@ VPATH+=../lib
 all: exc_vec app image
 app app_clean image image_clean:
 	@make "$@" -C $(APPDIR)
+clean: app_clean image_clean
 exc_vec exc_vec_clean:
 	@make "$@" -C $(EXCVECDIR)
 
