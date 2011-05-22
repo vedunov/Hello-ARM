@@ -1,4 +1,6 @@
 #!/bin/sh
 
+/sbin/rmmod sam_ba
 /sbin/rmmod usbserial
+/sbin/modprobe pl2303
 minicom

@@ -1,12 +1,12 @@
 #!/bin/sh
 
-SAMBA_DIR=/home/alex/sam/sam-ba_cdc_2.8.linux_01
+SAMBA_DIR=/home/alex/prog/sam-ba_cdc_2.8.linux_01
 SAMBA=${SAMBA_DIR}/sam-ba_cdc_2.8.linux_01
 USBSERIAL=${SAMBA_DIR}/USBSERIAL_MODPARAMS
 
+/sbin/rmmod cdc_acm
 /sbin/rmmod pl2303
 /sbin/rmmod usbserial
+/sbin/modprobe sam_ba
 
-echo ${USBSERIAL}
-sh ${USBSERIAL}
 ${SAMBA}
